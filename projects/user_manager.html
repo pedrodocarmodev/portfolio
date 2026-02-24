@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Manager</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Voltar para Projetos</a>
+
+        <h1 class="project-title">User Manager</h1>
+
+        <div class="intro-card">
+          <p>
+            API python desenvolvida com o objetivo de aprender mais sobre o uso
+            de <b>JWT tokens</b>.
+          </p>
+        </div>
+
+        <div class="banner-wrapper">
+          <img
+            class="banner"
+            src="/imgs/user_manager.png"
+            alt="Banner do projeto"
+          />
+        </div>
+
+        <a
+          class="github-btn"
+          href="https://github.com/pedrodocarmodev/UsersAPI"
+          target="_blank"
+        >
+          Ver no GitHub
+        </a>
+
+        <div class="content-card">
+          <p>
+            A stack utilizada foi:
+            <b>FastAPI, Sqlachemy, Sqlite, JWT e Pydantic</b>. Aprendi os
+            principais conceitos sobre <b>JWT (Json Web Token)</b>, onde um
+            access token é gerado quando um usuário faz login no sistema, e deve
+            ser armazenado no frontend. A cada requisição que exige
+            <b>autenticação</b>, o client deve mandar o JWT token no header.
+            Além disso, esse token possui um <b>tempo de expiração</b>, que é
+            definido pelo desenvolvedor.
+            <br />
+            Todas as rotas de manipulação dos usuário (Create, Read, Update,
+            Delete), exigem autenticação prévia.
+          </p>
+
+          <hr />
+
+          <h2>Layered Architecture</h2>
+          <br />
+
+          <h3>User:</h3>
+          <b>routers/</b> → HTTP layer <br />
+          <b>services/</b> → Business logic <br />
+          <b>repositories/</b> → Data access layer <br />
+          <b>schemas/</b> → Pydantic models <br />
+          <b>core/</b> → Database configuration <br />
+          <b>models/</b> → SQLAlchemy models <br />
+          <br />
+
+          <h3>Auth Module</h3>
+          <b>routes/</b> → Auth HTTP endpoints<br />
+          <b>services/</b> → Auth token generation logic <br />
+          <b>models/</b> → Token data structures<br />
+          <b>utils/</b> → Cryptographic helpers (password hashing and
+          verification) <br />
+
+          <hr />
+
+          <h2>Endpoints</h2>
+          <ul>
+            <li>
+              <code>POST /api/auth/token</code> – Realiza autenticação e retorna
+              JWT
+            </li>
+            <li><code>POST /users</code> – Cria um usuário</li>
+            <li><code>GET /users</code> – Lista usuários</li>
+            <li><code>GET /users/{id}</code> – Busca usuário por ID</li>
+            <li><code>PUT /users/{id}</code> – Atualiza usuário</li>
+            <li><code>DELETE /users/{id}</code> – Remove usuário</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

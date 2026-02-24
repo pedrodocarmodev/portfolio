@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments Django App</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Voltar para Projetos</a>
+
+        <h1 class="project-title">Comments Django App</h1>
+
+        <div class="intro-card">
+          <p>
+            Aplicação Django com o objetivo de simular um blog com posts e comentários.
+          </p>
+        </div>
+
+        <div class="banner-wrapper">
+          <img
+            class="banner"
+            src="/imgs/comments_app.png"
+            alt="Banner do projeto"
+          />
+        </div>
+
+        <a
+          class="github-btn"
+          href="https://github.com/pedrodocarmodev/ComentariosPostCRUD/"
+          target="_blank"
+        >
+          Ver no GitHub
+        </a>
+
+        <div class="content-card">
+          <p>
+            A stack utilizada foi:
+            <b>Django, SQLite e Bootstrap</b>. Com esse projeto consolidei o processo de criação
+            de aplicativos Django. Aprendi também a modelar entidades no Django utilizando <b>ForeignKey</b> 
+            para representar relações <b>one-to-many</b>.
+          </p>
+
+          <hr />
+
+          <h2>MTV Architecture</h2>
+          <br />
+
+          <b>templates/</b> → HTML files <br />
+          <b>views/</b> → Business logic <br />
+          <b>models/</b> → Data structure <br />
+
+          <hr />
+
+          <h2>Endpoints</h2>
+          <ul>
+            <li><code>/</code> - Home page</li>
+            <li><code>/post/{post_id}</code> - Acessa Post</li>
+            <li><code>/add-comentario/{post_id}</code> - Adiciona Comentário</li>
+            <li><code>/deletar-comentario/{post_id}/{id}</code> - Deletar Comentário</li>
+            <li><code>/admin</code> - Painel Admin</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

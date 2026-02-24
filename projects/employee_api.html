@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Voltar para Projetos</a>
+
+        <h1 class="project-title">Employee API</h1>
+
+        <div class="intro-card">
+          <p>
+            API responsável por armazenar informações de empregados de uma empresa fictícia.
+            Possui funcionalidades como contratação e demissão de funcionários.
+          </p>
+        </div>
+
+        <div class="banner-wrapper">
+          <img class="banner" src="/imgs/go.png" alt="Banner do projeto" />
+        </div>
+
+        <a
+          class="github-btn"
+          href="https://github.com/pedrodocarmodev/Go_Employee_API"
+          target="_blank"
+        >
+          Ver no GitHub
+        </a>
+
+        <div class="content-card">
+          <p>
+            A stack utilizada foi: <b>Go, Gin e PostgreSQL</b>.
+            O projeto consolidou conceitos como <b>Arquitetura em Camadas</b> e
+            <b>integração com banco de dados</b>.
+          </p>
+
+          <hr />
+
+          <p>
+            Ordem de dependências:
+            <b>HTTP → Handler → Service → Repository → PostgreSQL</b>
+          </p>
+
+          <hr />
+
+          <h2>Endpoints</h2>
+          <ul>
+            <li>GET /employees</li>
+            <li>GET /employees/:id</li>
+            <li>POST /employees</li>
+            <li>PATCH /employees/:id/fire</li>
+            <li>PATCH /employees/:id/employ</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

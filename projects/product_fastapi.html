@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Manager API</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Voltar para Projetos</a>
+
+        <h1 class="project-title">Product Manager API</h1>
+
+        <div class="intro-card">
+          <p>
+            API REST para gerenciamento de produtos, criada para praticar
+            desenvolvimento backend com FastAPI e boas práticas básicas.
+          </p>
+        </div>
+
+        <div class="banner-wrapper">
+          <img
+            class="banner"
+            src="/imgs/product_fastapi.png"
+            alt="Banner do projeto"
+          />
+        </div>
+
+        <a
+          class="github-btn"
+          href="https://github.com/piudi2121/ProductManagerAPI"
+          target="_blank"
+        >
+          Ver no GitHub
+        </a>
+
+        <div class="content-card">
+          <p>
+            A stack utilizada foi:
+            <b>FastAPI, SQLAlchemy, SQLite e Pydantic</b>.
+            A API permite criar, listar, atualizar e remover produtos,
+            além de filtrar por categoria.
+            <br />
+            O banco é criado automaticamente com SQLite e a documentação
+            interativa é gerada pelo próprio FastAPI (Swagger e Redoc). Com esse projeto 
+            consolidei ainda mais meus conhecimentos sobre RESTful APIs.
+          </p>
+
+        </div>
+        <br>
+
+        <div class="banner-wrapper">
+          <img
+            class="banner"
+            src="/imgs/product_fastapi2.png"
+            alt="Rascunho do projeto"
+          />
+        </div>
+
+        <div class="content-card">
+
+          <h2>Estrutura do Produto</h2>
+          <br />
+
+          <b>id</b> → Identificador único <br />
+          <b>name</b> → Nome do produto (único) <br />
+          <b>desc</b> → Descrição <br />
+          <b>stock</b> → Quantidade em estoque <br />
+          <b>price</b> → Preço <br />
+          <b>category</b> → Categoria do produto <br />
+          <b>created_at</b> → Data de criação <br />
+          <b>updated_at</b> → Data de atualização <br />
+
+          <hr />
+
+          <h2>Endpoints</h2>
+          <ul>
+            <li><code>POST /products</code> – Criar produto</li>
+            <li><code>GET /products</code> – Listar produtos</li>
+            <li><code>GET /products/{category}</code> – Filtrar por categoria</li>
+            <li><code>GET /products/{id}</code> – Buscar por ID</li>
+            <li><code>PUT /products/{id}</code> – Atualizar produto</li>
+            <li><code>DELETE /products/{id}</code> – Remover produto</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

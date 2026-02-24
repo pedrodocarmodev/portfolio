@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projeto</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Voltar para Projetos</a>
+
+        <h1 class="project-title">Post Manager</h1>
+
+        <div class="intro-card">
+          <p>
+            API desenvolvida com o objetivo de gerenciar posts em um blog e
+            comentários relacionados.
+          </p>
+        </div>
+
+        <div class="banner-wrapper">
+          <img
+            class="banner"
+            src="/imgs/post_manager.png"
+            alt="Banner do projeto"
+          />
+        </div>
+
+        <a
+          class="github-btn"
+          href="https://github.com/pedrodocarmodev/PostManagerAPI"
+          target="_blank"
+        >
+          Ver no GitHub
+        </a>
+
+        <div class="content-card">
+          <p>
+            A stack utilizada foi: <b>FastAPI, Sqlachemy, Sqlite</b>. O projeto
+            consolidou conceitos de <b>Foreign Key</b> e
+            <b>integração com banco de dados</b>. Entendi melhor como criar e
+            organizar <b>Endpoints</b>.
+          </p>
+
+          <hr />
+
+          <h2>Arquitetura</h2>
+
+            <b>routers/</b>       → HTTP layer <br>
+            <b>services/</b>      → Business logic <br>
+            <b>repositories/</b>  → Data access layer <br>
+            <b>schemas/</b>       → Pydantic models <br>
+            <b>core/</b>          → Database configuration <br>
+            <b>models/</b>        → SQLAlchemy models <br>
+          <hr />
+
+          <h2>Endpoints</h2>
+          <ul>
+            <li><code>POST /posts</code> – Create post</li>
+            <li><code>GET /posts/{post_id}</code> – Get post by ID</li>
+            <li><code>PUT /posts/{post_id}</code> – Update post</li>
+            <li><code>DELETE /posts/{post_id}</code> – Delete post</li>
+            <li>
+              <code>POST /posts/{post_id}/comments</code> – Create comment for a
+              post
+            </li>
+            <li>
+              <code>GET /posts/{post_id}/comments</code> – List comments of a
+              post
+            </li>
+          </ul>
+
+          <h3>Comments</h3>
+          <ul>
+            <li><code>GET /comments/{comment_id}</code> – Get comment by ID</li>
+            <li><code>PUT /comments/{comment_id}</code> – Update comment</li>
+            <li><code>DELETE /comments/{comment_id}</code> – Delete comment</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

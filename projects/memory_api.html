@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory API</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Voltar para Projetos</a>
+
+        <h1 class="project-title">Memory API</h1>
+
+        <div class="intro-card">
+          <p>
+            API python criada para treinos de memorização de números decimais e binários.
+          </p>
+        </div>
+
+        <div class="banner-wrapper">
+          <img
+            class="banner"
+            src="/imgs/memory_api.png"
+            alt="Banner do projeto"
+          />
+        </div>
+
+        <a
+          class="github-btn"
+          href="https://github.com/pedrodocarmodev/Memory_Fast_API"
+          target="_blank"
+        >
+          Ver no GitHub
+        </a>
+
+        <div class="content-card">
+          <p>
+            A stack utilizada foi:
+            <b>FastAPI, SQLalchemy, SQLite e Pydantic</b>. Para este projeto eu trouxe um dos meus 
+            grandes hobbies, a <b>memorização</b> como um esporte. O aplicativo é responsável 
+            por criar sequências aleatórias de números decimais ou binários para que o usuário
+            memorize. Após a memorização o usuário envia a resposta, que será corrigida na API, e 
+            retornará ao usuário seu resultado e a sequência esperada.
+            Pretendo evoluir ainda mais esta API no futuro, adicionando usuários com autenticação 
+            JWT, e estatísticas. 
+            <br>
+            Além disso, criei um template html simples, para possuir uma interface onde o usuário 
+            possa realizar o treinamento. Para rodar a aplicação, deve-se ter dois terminais ativos,
+            um rodando a API e o outro o servidor estático para o template HTML.
+          </p>
+        </div>
+        <br>
+
+        <div class="banner-wrapper">
+          <img
+            class="banner"
+            src="/imgs/memory_api2.png"
+            alt="Banner do projeto"
+          />
+        </div>
+
+        <div class="content-card">
+          <h2>Layered Architecture</h2>
+          <br />
+          <b>routers/</b> → HTTP layer <br />
+          <b>services/</b> → Business logic <br />
+          <b>core/</b> → Database configuration <br />
+          <b>models/</b> → SQLAlchemy models e Pydantic Schemas <br />
+
+          <hr />
+
+          <h2>Endpoints</h2>
+          <ul>
+            <li><code>POST /training</code> – Cria um treino</li>
+            <li><code>GET /training/{id}</code> – Busca por um treino</li>
+            <li><code>POST /training/{id}/answer</code> – Envia uma resposta</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

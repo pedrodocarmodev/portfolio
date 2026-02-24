@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Go Products API</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Voltar para Projetos</a>
+
+        <h1 class="project-title">Go Products API</h1>
+
+        <div class="intro-card">
+          <p>
+            API REST desenvolvida em <b>Go</b> para cadastro e consulta de produtos,
+            com arquitetura em camadas e ambiente containerizado.
+          </p>
+        </div>
+
+        <div class="banner-wrapper">
+          <img
+            class="banner"
+            src="/imgs/go.png"
+            alt="Banner do projeto"
+          />
+        </div>
+
+        <a
+          class="github-btn"
+          href="https://github.com/pedrodocarmodev/ProductGoAPI/"
+          target="_blank"
+        >
+          Ver no GitHub
+        </a>
+
+        <div class="content-card">
+          <p>
+            A stack utilizada foi:
+            <b>Go, Gin, PostgreSQL e Docker</b>.
+            A API foi construída utilizando separação por responsabilidades,
+            organizando camadas de controller, use case e repository.
+            <br />
+            O projeto também foi containerizado com <b>Docker</b> e <b>Docker Compose</b>,
+            permitindo subir a aplicação junto com o banco PostgreSQL
+            de forma simples.
+          </p>
+
+          <hr />
+
+          <h2>Arquitetura</h2>
+          <br />
+
+          <b>cmd/</b> → Ponto de entrada da aplicação <br />
+          <b>controllers/</b> → Camada HTTP <br />
+          <b>usecases/</b> → Regras de negócio <br />
+          <b>repositories/</b> → Acesso ao banco de dados <br />
+          <b>database/</b> → Conexão e configuração do PostgreSQL <br />
+
+          <hr />
+
+          <h2>Endpoints</h2>
+          <ul>
+            <li><code>GET /ping</code> – Health check</li>
+            <li><code>GET /products</code> – Lista produtos</li>
+            <li><code>POST /product</code> – Cria produto</li>
+            <li><code>GET /product/:productId</code> – Busca produto por ID</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

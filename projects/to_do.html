@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do Django</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="main">
+      <div class="container">
+        <a href="../index.html" class="back-link">← Voltar para Projetos</a>
+
+        <h1 class="project-title">To Do Django</h1>
+
+        <div class="intro-card">
+          <p>
+            Aplicação CRUD Django criada com o objetivo de criar e gerenciar tarefas diárias. 
+          </p>
+        </div>
+
+        <div class="banner-wrapper">
+          <img
+            class="banner"
+            src="/imgs/to_do.png"
+            alt="Banner do projeto"
+          />
+        </div>
+
+        <a
+          class="github-btn"
+          href="https://github.com/pedrodocarmodev/To_Do_CRUD"
+          target="_blank"
+        >
+          Ver no GitHub
+        </a>
+
+        <div class="content-card">
+          <p>
+            A stack utilizada foi:
+            <b>Django, SQLite e Bootstrap</b>. Com esse projeto consegui me familiarizar ainda mais 
+            com a organização de projetos Django, que seguem a arquitetura <b>MTV</b>. Onde temos M para 
+            <b>models</b>, onde definimos as estruturas de dados que serão salvas no banco de dados, T de <b>templates</b>, 
+            onde fica a UI do nosso app, com os arquivos .html e o V de <b>Views</b>, onde criamos a conexão entre 
+            templates e o banco de dados e realizamos a lógica do negócio. Além disso, aprendi mais sobre os métodos HTTP como GET, POST, PUT e DELETE.
+          </p>
+
+          <hr />
+
+          <h2>MTV Architecture</h2>
+          <br />
+
+          <b>templates/</b> → HTML files <br />
+          <b>views/</b> → Business logic <br />
+          <b>models/</b> → Data structure <br />
+
+          <hr />
+
+          <h2>Endpoints</h2>
+          <ul>
+            <li><code>/</code> - Home page</li>
+            <li><code>/deletar-tarefa/{id}</code> - Deleta Tarefa</li>
+            <li><code>/atualizar-tarefa/{id}</code> - Atualiza Tarefa</li>
+            <li><code>/admin</code> - Painel Admin</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
