@@ -4,10 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
     <style>
       * {
         margin: 0;
@@ -18,10 +14,25 @@
 
       body {
         display: flex;
-        height: 100vh;
+        min-height: 100vh;
         background-color: #0f172a;
         color: #e2e8f0;
-        overflow: hidden;
+      }
+
+      /* MENU TOGGLE */
+      .menu-toggle {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #111827;
+        color: white;
+        border: 1px solid #1f2937;
+        padding: 10px 14px;
+        border-radius: 8px;
+        font-size: 20px;
+        cursor: pointer;
+        z-index: 1001;
       }
 
       /* Sidebar */
@@ -33,6 +44,7 @@
         flex-direction: column;
         align-items: center;
         border-right: 1px solid #1f2937;
+        transition: transform 0.3s ease;
       }
 
       .profile-img {
@@ -67,7 +79,7 @@
         color: #fff;
       }
 
-      /* Main content */
+      /* Main */
       .main {
         flex: 1;
         padding: 40px;
@@ -84,6 +96,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 25px;
+        max-width: 1200px;
       }
 
       .project-card {
@@ -135,25 +148,45 @@
         border-radius: 8px;
       }
 
-      /* Responsive */
+      /* RESPONSIVE */
       @media (max-width: 900px) {
-        .projects-grid {
-          grid-template-columns: 1fr;
+        body {
+          display: block;
+        }
+
+        .menu-toggle {
+          display: block;
         }
 
         .sidebar {
-          width: 200px;
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 100vh;
+          width: 250px;
+          transform: translateX(-100%);
+          z-index: 1000;
+        }
+
+        .sidebar.active {
+          transform: translateX(0);
+        }
+
+        .main {
+          padding: 100px 20px 40px 20px;
+        }
+
+        .projects-grid {
+          grid-template-columns: 1fr;
         }
       }
     </style>
   </head>
   <body>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
     <aside class="sidebar">
-      <img
-        src="./imgs/eu_1para1.jpeg"
-        alt="Minha Foto"
-        class="profile-img"
-      />
+      <img src="./imgs/eu_1para1.jpeg" alt="Minha Foto" class="profile-img" />
 
       <nav class="nav-links">
         <a href="#projects">Projetos</a>
@@ -165,130 +198,167 @@
       <h1 id="projects">Projetos</h1>
 
       <div class="projects-grid">
-
-
-        
-
         <div class="project-card">
-          <a href="./projects/employee_api.html" style="text-decoration: none;color: inherit;">
-          <img src="./imgs/go.png" alt="Projeto 1" />
-          <div class="project-content">
-            <h3>Employee API</h3>
-            <p>
-              API Go utilizando Gin, postgres e http/sql para gerenciar empregados com persistência de dados
-            </p>
-          </div>
+          <a
+            href="./projects/employee_api.html"
+            style="text-decoration: none; color: inherit"
+          >
+            <img src="./imgs/go.png" alt="Projeto 1" />
+            <div class="project-content">
+              <h3>Employee API</h3>
+              <p>
+                API Go utilizando Gin, postgres e http/sql para gerenciar
+                empregados com persistência de dados
+              </p>
+            </div>
           </a>
         </div>
 
         <div class="project-card">
-          <a href="./projects/post_manager.html" style="text-decoration: none;color: inherit;">
-          <img src="./imgs/post_manager.png" alt="Projeto 1" />
-          <div class="project-content">
-            <h3>Post Manager</h3>
-            <p>
-              API python utilizando FastAPI, Sqlalchemy e Sqlite. Gerencia post e comentários associados (operações CRUD).
-            </p>
-          </div>
+          <a
+            href="./projects/post_manager.html"
+            style="text-decoration: none; color: inherit"
+          >
+            <img src="./imgs/post_manager.png" alt="Projeto 1" />
+            <div class="project-content">
+              <h3>Post Manager</h3>
+              <p>
+                API python utilizando FastAPI, Sqlalchemy e Sqlite. Gerencia
+                post e comentários associados (operações CRUD).
+              </p>
+            </div>
           </a>
         </div>
 
         <div class="project-card">
-          <a href="./projects/user_manager.html" style="text-decoration: none;color: inherit;">
-          <img src="./imgs/user_manager.png" alt="Projeto 1" />
-          <div class="project-content">
-            <h3>User Manager JWT</h3>
-            <p>
-              API python utilizando FastAPI, Sqlalchemy e Sqlite. Autenticação feita com tokens JWT para acesso as operações CRUD.
-            </p>
-          </div>
+          <a
+            href="./projects/user_manager.html"
+            style="text-decoration: none; color: inherit"
+          >
+            <img src="./imgs/user_manager.png" alt="Projeto 1" />
+            <div class="project-content">
+              <h3>User Manager JWT</h3>
+              <p>
+                API python utilizando FastAPI, Sqlalchemy e Sqlite. Autenticação
+                feita com tokens JWT para acesso as operações CRUD.
+              </p>
+            </div>
           </a>
         </div>
 
         <div class="project-card">
-          <a href="./projects/memory_api.html" style="text-decoration: none;color: inherit;">
-          <img src="./imgs/memory_api.png" alt="Projeto 1" />
-          <div class="project-content">
-            <h3>Memory API</h3>
-            <p>
-              API python desenvolvida com FastAPI, Sqlalchemy e Sqlite, cria sessões de memorização de números aleatórios e confere as respostas.
-            </p>
-          </div>
+          <a
+            href="./projects/memory_api.html"
+            style="text-decoration: none; color: inherit"
+          >
+            <img src="./imgs/memory_api.png" alt="Projeto 1" />
+            <div class="project-content">
+              <h3>Memory API</h3>
+              <p>
+                API python desenvolvida com FastAPI, Sqlalchemy e Sqlite, cria
+                sessões de memorização de números aleatórios e confere as
+                respostas.
+              </p>
+            </div>
           </a>
         </div>
 
         <div class="project-card">
-          <a href="./projects/comments_app.html" style="text-decoration: none;color: inherit;">
-          <img src="./imgs/comments_app.png" alt="Projeto 1" />
-          <div class="project-content">
-            <h3>Comments Django APP</h3>
-            <p>
-              Aplicação Django com implementação de comentários a post com persistência de dados, com o uso de Foreign Keys.
-            </p>
-          </div>
+          <a
+            href="./projects/comments_app.html"
+            style="text-decoration: none; color: inherit"
+          >
+            <img src="./imgs/comments_app.png" alt="Projeto 1" />
+            <div class="project-content">
+              <h3>Comments Django APP</h3>
+              <p>
+                Aplicação Django com implementação de comentários a post com
+                persistência de dados, com o uso de Foreign Keys.
+              </p>
+            </div>
           </a>
         </div>
 
         <div class="project-card">
-          <a href="./projects/to_do.html" style="text-decoration: none;color: inherit;">
-          <img src="./imgs/to_do.png" alt="Projeto 1" />
-          <div class="project-content">
-            <h3>To-Do Django</h3>
-            <p>
-              Aplicação Django para administrar tarefas com operações CRUD e interface moderna com Bootstrap.
-            </p>
-          </div>
-          </a>
-        </div>
-
-
-        <div class="project-card">
-          <a href="./projects/product_api.html" style="text-decoration: none;color: inherit;">
-          <img src="./imgs/go.png" alt="Projeto 1" />
-          <div class="project-content">
-            <h3>Product API</h3>
-            <p>
-              API desenvolvida em Go utilizando Docker, Postgres e Gin. Gerencia produtos guardados em um banco de dados.
-            </p>
-          </div>
-          </a>
-        </div>  
-
-        <div class="project-card">
-          <a href="./projects/product_fastapi.html" style="text-decoration: none;color: inherit;">
-          <img src="./imgs/product_fastapi.png" alt="Projeto 1" />
-          <div class="project-content">
-            <h3>Product FastAPI</h3>
-            <p>
-              API python desenvolvida com FastAPI, Sqlalchemy e Sqlite. Operações CRUD e persistência de dados.
-            </p>
-          </div>
+          <a
+            href="./projects/to_do.html"
+            style="text-decoration: none; color: inherit"
+          >
+            <img src="./imgs/to_do.png" alt="Projeto 1" />
+            <div class="project-content">
+              <h3>To-Do Django</h3>
+              <p>
+                Aplicação Django para administrar tarefas com operações CRUD e
+                interface moderna com Bootstrap.
+              </p>
+            </div>
           </a>
         </div>
 
         <div class="project-card">
-          <a href="./projects/password.html" style="text-decoration: none;color: inherit;">
-          <img src="./imgs/password_api.png" alt="Projeto 1" />
-          <div class="project-content">
-            <h3>Password Validation API</h3>
-            <p>
-              API python desenvolvida com FastAPI. Valida senhas enviadas para que sigam certos parâmetros de segurança.
-            </p>
-          </div>
+          <a
+            href="./projects/product_api.html"
+            style="text-decoration: none; color: inherit"
+          >
+            <img src="./imgs/go.png" alt="Projeto 1" />
+            <div class="project-content">
+              <h3>Product API</h3>
+              <p>
+                API desenvolvida em Go utilizando Docker, Postgres e Gin.
+                Gerencia produtos guardados em um banco de dados.
+              </p>
+            </div>
           </a>
         </div>
 
-        <div class="project-card" style="display: none;">
-          <img src="./imgs/recipe_manager.png" alt="Projeto 1"/>
+        <div class="project-card">
+          <a
+            href="./projects/product_fastapi.html"
+            style="text-decoration: none; color: inherit"
+          >
+            <img src="./imgs/product_fastapi.png" alt="Projeto 1" />
+            <div class="project-content">
+              <h3>Product FastAPI</h3>
+              <p>
+                API python desenvolvida com FastAPI, Sqlalchemy e Sqlite.
+                Operações CRUD e persistência de dados.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project-card">
+          <a
+            href="./projects/password.html"
+            style="text-decoration: none; color: inherit"
+          >
+            <img src="./imgs/password_api.png" alt="Projeto 1" />
+            <div class="project-content">
+              <h3>Password Validation API</h3>
+              <p>
+                API python desenvolvida com FastAPI. Valida senhas enviadas para
+                que sigam certos parâmetros de segurança.
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="project-card" style="display: none">
+          <img src="./imgs/recipe_manager.png" alt="Projeto 1" />
           <div class="project-content">
             <h3>Recipe Manager</h3>
             <p>
-              Aplicação Django que gerencia receitas, estoque de itens e calcula valores por receita
+              Aplicação Django que gerencia receitas, estoque de itens e calcula
+              valores por receita
             </p>
           </div>
         </div>
-
       </div>
     </main>
+    <script>
+      function toggleMenu() {
+        document.querySelector(".sidebar").classList.toggle("active");
+      }
+    </script>
   </body>
 </html>

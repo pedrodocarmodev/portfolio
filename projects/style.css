@@ -11,14 +11,31 @@ body {
   line-height: 1.7;
 }
 
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: #111827;
+  color: white;
+  border: 1px solid #1e293b;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
 .main {
   width: 100%;
-  padding: 40px 20px 100px;
+  padding: 60px 20px 100px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
+  width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
 }
 
 .back-link {
